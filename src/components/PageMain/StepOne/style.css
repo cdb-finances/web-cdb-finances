@@ -1,0 +1,26 @@
+.step-one {
+  width: 36.8rem;
+}
+
+.input {
+  height: 4.4rem;
+  width: 100%;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+
+  border-radius: 8px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding-left: 1.4rem;
+  color: rgba(102, 112, 133, 1);
+}
+
+.btn {
+  height: 3.3rem;
+  width: 16rem;
+}
+
+.link {
+  text-decoration: underline;
+}

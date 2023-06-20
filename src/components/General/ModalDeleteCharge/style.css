@@ -1,0 +1,49 @@
+.modal-delete-charge {
+  animation-name: showmodal;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+
+  transform: translateX(-2rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 600px;
+  height: 400px;
+
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.close-modal-delete-charge {
+  cursor: pointer;
+
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.alert-icon {
+  width: 160px;
+  height: 160px;
+}
+
+.container-modal-delete-charge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.btn-not-delete,
+.btn-yes-delete {
+  cursor: pointer;
+  width: 100px;
+  height: 24px;
+  border-radius: 4px;
+  margin-right: 16px;
+}

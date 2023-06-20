@@ -1,0 +1,26 @@
+.box {
+  height: 512px;
+  width: 600px;
+  border-radius: 30px;
+  background-color: rgba(240, 240, 245, 1);
+}
+
+.box img {
+  width: 104px;
+}
+
+.btn-login {
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+
+  width: 160px;
+  height: 33px;
+
+  border-radius: 10px;
+  border: none;
+  color: #F8F8F9;
+
+  margin-bottom: 60px;
+}

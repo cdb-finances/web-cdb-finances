@@ -1,0 +1,38 @@
+.bg-header {
+  position: relative;
+  height: 11.2rem;
+}
+
+.content-header {
+  padding: 4rem calc(13.5rem - 3.2rem) 0 calc(8.2rem - 3.2rem);
+  height: 100%;
+  border-bottom: 1px solid #ACD9C5;
+}
+
+.profile-bar {
+  gap: 0.8rem;
+}
+
+.profile-bar img:hover {
+  cursor: pointer;
+}
+
+.profile {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  background-color: #DEDEE9;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-right: 0.8rem;
+}
+
+.clients {
+  font-weight: 400;
+}
+
+#downline {
+  position: absolute;
+  bottom: 4px;
+}

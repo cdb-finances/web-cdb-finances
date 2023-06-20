@@ -1,0 +1,9 @@
+.home-header {
+    width: calc(100vw - 10.8rem);
+    margin: 0 3.2rem;
+}
+
+.container-home {
+    min-height: 100vh;
+    padding: 0 0 3.7rem 0;
+}

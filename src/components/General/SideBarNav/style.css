@@ -1,0 +1,41 @@
+.side-bar-nav {
+  width: 10.8rem;
+  min-height: 100vh;
+
+  padding-top: 4.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.menu {
+  height: 36.6rem;
+  width: 100%;
+}
+
+.item {
+  height: 7.4rem;
+  width: 100%;
+}
+
+@keyframes item-hover {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: .7;
+    transform: scale(1.03);
+  }
+}
+
+.item:hover {
+  animation-name: item-hover;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+
+.border {
+  border-right: 2px solid rgba(218, 1, 117, 1);
+}

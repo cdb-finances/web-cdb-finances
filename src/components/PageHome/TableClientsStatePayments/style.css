@@ -1,0 +1,17 @@
+.client-card {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-top: 2rem;
+
+    border-bottom: 1px solid #EFF0F7;
+    padding-bottom: 1.6rem;
+}
+
+.table-link {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 1.2rem;
+}

@@ -1,0 +1,8 @@
+.header-modal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  width: 100%;
+}

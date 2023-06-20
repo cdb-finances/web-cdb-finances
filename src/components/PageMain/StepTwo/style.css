@@ -1,0 +1,50 @@
+.step-two {
+  width: 368px;
+}
+
+.eye-password {
+  position: relative;
+}
+
+.eye-password.input {
+  height: 44px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding-left: 14px;
+  color: rgba(102, 112, 133, 1);
+}
+
+.input::placeholder {
+  color: rgba(102, 112, 133, 1);
+}
+
+.eye-password img {
+  position: absolute;
+  right: 0;
+  top: .2rem;
+  margin: 1.6rem 1.3rem;
+
+  cursor: pointer;
+}
+
+.btn {
+  height: 33px;
+  width: 160px;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.img-eye {
+  position: relative;
+  cursor: pointer;
+
+  width: 18.67px;
+  height: 17.78px;
+
+  margin-left: -35px;
+  top: 4px;
+}

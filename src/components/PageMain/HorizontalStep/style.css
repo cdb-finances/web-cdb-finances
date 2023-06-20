@@ -1,0 +1,24 @@
+.horizontal-step {
+  gap: 0.8rem;
+  margin-bottom: 6.4rem;
+}
+
+.bar {
+  height: 6px;
+  width: 82px;
+  border-radius: 20px;
+}
+
+.bg-bar {
+  background-color: rgba(222, 222, 233, 1);
+}
+
+@media (max-width: 1000px) {
+  .horizontal-step {
+    margin-bottom: unset;
+  }
+
+  .bar {
+    margin-top: 1rem;
+  }
+}

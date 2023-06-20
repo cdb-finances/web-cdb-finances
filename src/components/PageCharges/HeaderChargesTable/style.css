@@ -1,0 +1,11 @@
+.pointer {
+    cursor: pointer;
+}
+
+.glasseye-icon {
+    position: relative;
+    cursor: pointer;
+
+    margin-left: -40px;
+    top: 1px;
+}

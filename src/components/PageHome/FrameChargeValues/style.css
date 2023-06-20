@@ -1,0 +1,14 @@
+.frame-charge-values {
+  padding: 23px 40px;
+
+  width: 360px;
+  height: 111px;
+
+  border-radius: 30px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
+}
+
+.frame-charge-values img {
+  width: 29.17px;
+  height: 33.83px;
+}

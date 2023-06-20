@@ -1,0 +1,43 @@
+.modal-title {
+  gap: 16px;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width70 {
+  width: 70%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.gap {
+  gap: 24px;
+}
+
+.input {
+  height: 44px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding-left: 14px;
+  color: rgba(102, 112, 133, 1);
+}
+
+.input::placeholder {
+  color: rgba(102, 112, 133, 1);
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.btn-cancel {
+  border: 1px solid rgba(222, 222, 233, 1);
+}

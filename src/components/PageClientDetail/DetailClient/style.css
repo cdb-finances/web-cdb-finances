@@ -1,0 +1,20 @@
+.clients-details {
+  width: calc(100% - 11rem);
+}
+
+.client-data {
+  background-color: white;
+  border-radius: 3rem;
+  flex-wrap: wrap;
+  padding: 2.4rem 3rem;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
+}
+
+.client-data button {
+  width: 24.6rem;
+  height: 3.3rem;
+}
+
+.infos-client {
+  justify-content: space-between;
+}
