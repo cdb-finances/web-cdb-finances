@@ -8,10 +8,14 @@ import { getItem } from './utils/storage';
 import ClientsPage from './pages/Clients';
 import ChargesPage from './pages/Charges';
 import ClientDetailPage from './pages/ClientDetail';
+import axios from './services/api';
 
 function MainRoutes() {
+
     function ProtectedRoutes({ redirectTo }) {
         const token = getItem('token');
+
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         return token ? <Outlet /> : <Navigate to={redirectTo} />
     }

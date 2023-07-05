@@ -5,18 +5,17 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import imgSearchNotFound from './assets/search-error.svg';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import useHome from '../../../hooks/useHome';
 import api from '../../../services/api';
+import formatCentsIntoReais from "../../../utils/formatCentsIntoReais";
 import ModalDeleteCharge from '../../General/ModalDeleteCharge';
 import TableAnimation from "../../General/TableAnimation";
 import btnDelete from './assets/btn-delete.svg';
 import btnEdit from './assets/btn-edit.svg';
 import btnOrderCharges from './assets/filter.svg';
-import { getItem } from '../../../utils/storage';
-import formatCentsIntoReais from "../../../utils/formatCentsIntoReais";
+import imgSearchNotFound from './assets/search-error.svg';
 import './style.css';
 
 export default function ChargesTable() {
@@ -102,14 +101,14 @@ export default function ChargesTable() {
 
   async function getChargesList() {
 
-    const { data: allCharges } = await api.get('/charge', { headers: { Authorization: `Bearer ${getItem("token")}`, } });
+    const { data: allCharges } = await api.get('/charge');
 
     return allCharges;
   };
 
   async function getBillsPaid() {
     try {
-      const { data: paidCharges } = (await api.get('/charge/paid', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: paidCharges } = (await api.get('/charge/paid'));
 
       return paidCharges;
 
@@ -120,7 +119,7 @@ export default function ChargesTable() {
 
   async function getPendingCharges() {
     try {
-      const { data: pendingCharges } = (await api.get('/charge/pending', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: pendingCharges } = (await api.get('/charge/pending'));
 
       return pendingCharges;
 
@@ -131,7 +130,7 @@ export default function ChargesTable() {
 
   async function getOverdueCharges() {
     try {
-      const { data: overdueCharges } = (await api.get('/charge/expired', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: overdueCharges } = (await api.get('/charge/expired'));
 
       return overdueCharges;
 

@@ -1,17 +1,15 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useHome from '../../../hooks/useHome';
+import api from '../../../services/api';
+import ModalDeleteCharge from '../../General/ModalDeleteCharge';
 import ModalEditRegisterCharge from "../../General/ModalEditRegisterCharge";
 import ModalEditRegisterClient from '../../General/ModalEditRegisterClient';
 import ModalRegisterCharge from '../../General/ModalRegisterCharge';
 import Popup from '../../General/Popup';
-import ClientsDetails from '../ClientsDetails';
-import api from '../../../services/api';
-import "./style.css";
-import { getItem } from '../../../utils/storage';
-import ModalDeleteCharge from '../../General/ModalDeleteCharge';
-import ClientInfosTable from '../ClientInfosTable';
 import ClientChargesTable from '../ClientChargesTable';
+import ClientInfosTable from '../ClientInfosTable';
+import "./style.css";
 
 function DetailClient() {
   const { id } = useParams();
@@ -19,7 +17,7 @@ function DetailClient() {
 
   async function getClientById() {
     try {
-      const { data: client } = (await api.get(`/client/${id}`, { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: client } = (await api.get(`/client/${id}`));
       setCurrentClient(client);
     } catch (error) {
       console.log(error);

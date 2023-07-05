@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import useHome from "../../../hooks/useHome";
 import api from '../../../services/api';
-import { getItem } from '../../../utils/storage'
-import fileIcon from './assets/file-icon.svg';
-import closeIcon from './assets/close-icon.svg';
-import checkIcon from './assets/check-icon.svg';
 import formatCentsIntoReais from "../../../utils/formatCentsIntoReais";
+import checkIcon from './assets/check-icon.svg';
+import closeIcon from './assets/close-icon.svg';
+import fileIcon from './assets/file-icon.svg';
 import './style.css';
 
 export default function ModalEditRegisterCharge() {
@@ -93,8 +92,7 @@ export default function ModalEditRegisterCharge() {
         }
 
         try {
-            await api.put(`/charge/${currentCharge.id}`, newUpdateCharge,
-                { headers: { Authorization: `Bearer ${getItem("token")}`, } })
+            await api.put(`/charge/${currentCharge.id}`, newUpdateCharge);
             setPopupMessage('Cobrança editada com sucesso!')
             setIsPopup(true)
             setIsModalEditRegisterCharge(false)

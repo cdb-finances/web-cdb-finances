@@ -1,9 +1,8 @@
-import './style.css';
-import closeIcon from './assets/close-icon.svg';
-import alertIcon from './assets/alert-icon.svg';
 import useHome from '../../../hooks/useHome';
 import api from '../../../services/api';
-import { getItem } from '../../../utils/storage';
+import alertIcon from './assets/alert-icon.svg';
+import closeIcon from './assets/close-icon.svg';
+import './style.css';
 
 export default function ModalDeleteCharge() {
   const { setIsModalDeleteCharge, currentCharge,
@@ -20,7 +19,7 @@ export default function ModalDeleteCharge() {
 
     try {
 
-      await api.delete(`/charge/${currentCharge.id}`, { headers: { Authorization: `Bearer ${getItem("token")}`, } })
+      await api.delete(`/charge/${currentCharge.id}`);
 
       setIsModalDeleteCharge(false)
       setIsPopup(true)

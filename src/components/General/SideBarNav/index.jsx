@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import useHome from "../../../hooks/useHome";
+import api from "../../../services/api";
 import clientesGray from "./assets/clientes-gray.svg";
 import clientesPink from "./assets/clientes-pink.svg";
 import cobrancaGray from "./assets/cobrancas-gray.svg";
@@ -6,9 +8,6 @@ import cobrancaPink from "./assets/cobrancas-pink.svg";
 import homeGray from "./assets/home-gray.svg";
 import homePink from "./assets/home-pink.svg";
 import './style.css';
-import { useNavigate } from 'react-router-dom';
-import api from "../../../services/api";
-import { getItem } from "../../../utils/storage";
 
 function SideBarNav({ validateSideBar, setValidateSideBar }) {
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ function SideBarNav({ validateSideBar, setValidateSideBar }) {
 
   const getChargeByStatus = async () => {
     try {
-      const { data: charges } = (await api.get('/charge/status', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: charges } = (await api.get('/charge/status'));
 
       setBillingTableData(charges);
 
