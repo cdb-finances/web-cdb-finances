@@ -5,7 +5,6 @@ import performZipCodeQuery from "../../../services/performZipCodeQuery";
 import clientsIcon from "./assets/clients-modal.svg";
 import closeIcon from "./assets/close-modal.svg";
 import "./style.css";
-import { getItem } from "../../../utils/storage";
 
 function ModalRegisterClient() {
   const { setPopupMessage, setIsPopup,
@@ -143,9 +142,7 @@ function ModalRegisterClient() {
         phone: phoneFormated
       };
 
-      await api.put(`/client/${currentClient.id}`, editClient,
-        { headers: { Authorization: `Bearer ${getItem('token')}` } }
-      )
+      await api.put(`/client/${currentClient.id}`, editClient);
 
       setIsPopup(true)
       setPopupMessage('Cadastro atualizado com sucesso')

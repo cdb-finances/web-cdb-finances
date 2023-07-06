@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import useHome from "../../../hooks/useHome";
+import api from '../../../services/api';
 import HomeHeader from "../HomeHeader";
 import ModalEditRegisterUser from "../ModalEditRegisterUser";
 import SideBarNav from "../SideBarNav";
-import api from '../../../services/api';
 import "./style.css";
-import { getItem } from "../../../utils/storage";
 
 function Page({ children, validateSideBar, setValidateSideBar }) {
   const { isModalEditUser, updatedUser, setFormProfile } = useHome();
@@ -13,7 +12,7 @@ function Page({ children, validateSideBar, setValidateSideBar }) {
   async function getProfile() {
 
     try {
-      const response = await api.get('/user', { headers: { Authorization: `Bearer ${getItem("token")}`, } });
+      const response = await api.get('/user');
 
       const user = { ...response.data };
       setFormProfile({ ...user });

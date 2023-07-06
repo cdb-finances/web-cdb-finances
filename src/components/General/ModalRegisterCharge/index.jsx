@@ -1,12 +1,11 @@
+import { useState } from 'react';
 import useHome from '../../../hooks/useHome';
-import './style.css';
-import closeIcon from './assets/close-modal.svg';
-import fileIcon from './assets/file-icon.svg';
-import checkIcon from './assets/check-icon.svg'
-import { useEffect, useState } from 'react';
 import api from '../../../services/api';
 import formatCentsIntoReais from "../../../utils/formatCentsIntoReais";
-import { getItem } from '../../../utils/storage';
+import checkIcon from './assets/check-icon.svg';
+import closeIcon from './assets/close-modal.svg';
+import fileIcon from './assets/file-icon.svg';
+import './style.css';
 
 export default function ModalRegisterCharge() {
   const {
@@ -78,7 +77,7 @@ export default function ModalRegisterCharge() {
     }
 
     try {
-      await api.post(`/charge/${id}`, newCharge, { headers: { Authorization: `Bearer ${getItem("token")}`, } })
+      await api.post(`/charge/${id}`, newCharge);
       setPopupMessage('Cobrança cadastrada com sucesso')
       setIsPopup(true)
       setIsModalRegisterCharge(false)

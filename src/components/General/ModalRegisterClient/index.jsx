@@ -4,7 +4,6 @@ import api from '../../../services/api';
 import performZipCodeQuery from "../../../services/performZipCodeQuery";
 import clientsIcon from "./assets/clients-modal.svg";
 import closeIcon from "./assets/close-modal.svg";
-import { getItem } from '../../../utils/storage'
 import "./style.css";
 
 function ModalRegisterClient() {
@@ -135,8 +134,7 @@ function ModalRegisterClient() {
         phone: phoneFormated
       };
 
-      await api.post('/client', client, { headers: { Authorization: `Bearer ${getItem("token")}`, } }
-      );
+      await api.post('/client', client);
 
       setIsPopup(true)
       setPopupMessage('Cadastro concluído com sucesso')

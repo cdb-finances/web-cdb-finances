@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useHome from '../../../hooks/useHome';
 import api from '../../../services/api';
 import TableAnimation from "../../General/TableAnimation";
@@ -14,7 +14,6 @@ import btnAddCharge from './assets/btn-add-charge.svg';
 import btnOrderClients from './assets/btn-order-clients.svg';
 import imgSearchNotFound from "./assets/img-search-not-found.svg";
 import "./style.css";
-import { getItem } from '../../../utils/storage';
 
 export default function ClientsTable({ setShowAllClients }) {
   const { status } = useParams();
@@ -58,7 +57,7 @@ export default function ClientsTable({ setShowAllClients }) {
   async function getClients() {
     try {
 
-      const { data: allClients } = await api.get('/client', { headers: { Authorization: `Bearer ${getItem("token")}`, } })
+      const { data: allClients } = await api.get('/client')
       return allClients;
 
     } catch (error) {
@@ -68,7 +67,7 @@ export default function ClientsTable({ setShowAllClients }) {
 
   async function getCustomersUpToDate() {
     try {
-      const { data: clientsInDay } = (await api.get('/client/in-day', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: clientsInDay } = (await api.get('/client/in-day'));
       return clientsInDay;
 
     } catch (error) {
@@ -78,7 +77,7 @@ export default function ClientsTable({ setShowAllClients }) {
 
   async function getDelinquentCustomers() {
     try {
-      const { data: clientsDefaulter } = (await api.get('/client/defaulter', { headers: { Authorization: `Bearer ${getItem("token")}`, } }));
+      const { data: clientsDefaulter } = (await api.get('/client/defaulter'));
 
       return clientsDefaulter;
 

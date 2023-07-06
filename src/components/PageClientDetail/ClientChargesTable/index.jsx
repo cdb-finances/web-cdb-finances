@@ -1,5 +1,4 @@
 import { createTheme, ThemeProvider } from '@mui/material';
-import { useParams } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,14 +6,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import useHome from '../../../hooks/useHome';
 import api from '../../../services/api';
+import formatCentsIntoReais from '../../../utils/formatCentsIntoReais';
 import btnOrderClients from './assets/btn-order-clients.svg';
 import DeleteClient from './assets/delete-client.svg';
 import EditClient from './assets/edit-client.svg';
 import './style.css';
-import { getItem } from '../../../utils/storage';
-import formatCentsIntoReais from '../../../utils/formatCentsIntoReais';
 
 export default function ClientChargesTable() {
   const { id } = useParams();
@@ -43,7 +42,7 @@ export default function ClientChargesTable() {
 
   const getClientCharges = async () => {
     try {
-      const { data } = await api.get(`/charge/${id}`, { headers: { Authorization: `Bearer ${getItem("token")}`, } })
+      const { data } = await api.get(`/charge/${id}`);
 
       let i = 1;
       data.forEach(charge => {
@@ -56,7 +55,7 @@ export default function ClientChargesTable() {
   }
 
   async function getChargesList() {
-    const { data: allCharges } = await api.get('/charge', { headers: { Authorization: `Bearer ${getItem("token")}`, } });
+    const { data: allCharges } = await api.get('/charge');
 
     return allCharges;
   };
@@ -207,4 +206,4 @@ export default function ClientChargesTable() {
       </ThemeProvider>
     </div>
   )
-}  
+}

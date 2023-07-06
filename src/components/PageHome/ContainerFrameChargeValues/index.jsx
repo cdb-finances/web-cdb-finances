@@ -3,7 +3,6 @@ import api from "../../../services/api";
 import FrameChargeValues from "../FrameChargeValues";
 import objects from "./objects";
 import "./style.css";
-import { getItem } from "../../../utils/storage";
 
 function ContainerFrameChargeValues() {
   const [framesCharge, setFramesCharge] = useState(objects.infoFrameCharges);
@@ -28,7 +27,7 @@ function ContainerFrameChargeValues() {
 
   const getTheTotalAmountOfEachChargeByStatus = async () => {
     try {
-      const { data: totalValuePerStatus } = await api.get("/charge/total-values", { headers: { Authorization: `Bearer ${getItem("token")}`, } });
+      const { data: totalValuePerStatus } = await api.get("/charge/total-values");
 
       updateCardValues(totalValuePerStatus);
 
